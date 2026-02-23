@@ -3,7 +3,20 @@ import pypdf #type: ignore
 # Open the PDF file
 reader = pypdf.PdfReader("/Users/apple/Downloads/Introductory_Statistics_2e_-_WEB.pdf")
 
-# Print some stats about the PDF and the first page
+# Print basic info about it
 print("Title:", reader.metadata.title)
 print("Number of pages:", len(reader.pages))
-print("First page:", reader.pages[0].extract_text())
+
+# Extract text from page 17 (start of Chapter 1)
+page = reader.pages[16]  #  Python counts from 0, so page 17 = index 16
+text = page.extract_text()
+
+#print("\n--- PAGE 17 TEXT ---")
+#print(text)
+
+for i in range(5):
+    page = reader.pages[i]
+    text = page.extract_text()
+
+    print(f"\n--- PAGE {i + 1} ---")
+    print(text)
