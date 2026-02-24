@@ -1,4 +1,5 @@
 from pdf2image import convert_from_path #type: ignore
+import pytesseract #type: ignore
 
 # Converting page 101 to an image
 print("Converting page 101 to image...")
@@ -10,7 +11,10 @@ images = convert_from_path(
     last_page=101     # stop at page 101
 )
 
-# Saving image in file
-images[0].save("page101.png")
+# Running Tesseract OCR on the image
+print("Reading text from image...")
 
-print("Done! Open page101.png to see the image.")
+text = pytesseract.image_to_string(images[0])
+
+print("--- TEXT EXTRACTED BY TESSERACT ---")
+print(text)
