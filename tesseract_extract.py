@@ -18,3 +18,5 @@ text = pytesseract.image_to_string(images[0])
 
 print("--- TEXT EXTRACTED BY TESSERACT ---")
 print(text)
+
+# data on the table wasn't recorded appropriately

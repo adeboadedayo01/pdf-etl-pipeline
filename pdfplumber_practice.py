@@ -13,3 +13,8 @@ with pdfplumber.open("/Users/apple/Downloads/Introductory_Statistics_2e_-_WEB.pd
     print(f"Characters found: {len(chars)}")
     print(f"Words found: {len(words)}")
     print(f"Text length: {len(text) if text else 0}")
+
+#Characters found: 0
+#Words found: 0
+#Text length: 0
+#pdfplumber can't read this file
